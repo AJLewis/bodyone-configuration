@@ -59,4 +59,21 @@ router.get('/', async (req, res) => {
     }
 });
 
+router.get('/:id', async (req, res) => {
+    try {
+        const themeId = req.params.id;
+
+        // Find the theme by its ID
+        const theme = await Theme.findById(themeId);
+
+        if (!theme) {
+            return res.status(404).json({ message: `Theme with ID ${themeId} not found.` });
+        }
+
+        res.status(200).json(theme);
+    } catch (error) {
+        res.status(500).json({ message: 'Error fetching theme configuration', error });
+    }
+});
+
 export default router;
