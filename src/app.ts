@@ -12,7 +12,12 @@ const app = express();
 // Middleware
 app.use(cors());
 app.use(express.json());
-
+app.use((req, res, next) => {
+  res.header('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
+  res.header('Pragma', 'no-cache');
+  res.header('Expires', '0');
+  next();
+});
 // Routes
 app.use('/api/configuration', configurationRoutes);
 app.use('/api/configuration/theme', themeRoutes);

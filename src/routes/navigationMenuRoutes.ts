@@ -43,6 +43,7 @@ router.get('/:name', async (req, res) => {
             return res.status(404).json({ message: `Navigation menu with name ${name} not found.` });
         }
 
+        console.log(navMenu);
         res.status(200).json(navMenu);
     } catch (error) {
         res.status(500).json({ message: 'Error fetching navigation menu configuration', error });

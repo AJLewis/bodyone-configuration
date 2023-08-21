@@ -1,6 +1,7 @@
 import { Schema, model, Document } from 'mongoose';
 
 interface Theme extends Document {
+    name: string,
     dark: boolean;
     colors: any;
     fonts: any;
@@ -8,6 +9,7 @@ interface Theme extends Document {
 }
 
 const ThemeSchema = new Schema<Theme>({
+    name: String,
     dark: Boolean,
     colors: Schema.Types.Mixed,
     fonts: Schema.Types.Mixed,
