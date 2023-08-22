@@ -22,7 +22,8 @@
       "tabsBackground": "#0d2c40",
       "tabSelected": "#96095e",
       "highlightedTab": "#098896",
-      "menuDividerColor": "#0d2c40"
+      "menuDividerColor": "#153f59",
+      "cardDividerColor": "#fff"
   },
   "fonts": {
       "primary": "Roboto"
